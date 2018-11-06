@@ -1,5 +1,5 @@
 # cat-parade
-Java training with fun
+Coding training with fun
 
 # Histoire
 Le plus grand défilé de chats du monde va avoir lieu.
