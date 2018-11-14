@@ -1,6 +1,6 @@
 package jobsDescription.Service;
 
-import jobsDescription.Dao.LodgeManagerDao;
+import jobsDescription.Dao.LodgeManagerInterface;
 import jobsDescription.Entity.Cat;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  * Il sait, pour l'instant, donner la liste intégrale des chats qui vont défiler.
  */
 public class Moutarde implements StageManagerInterface{
-    public LodgeManagerDao lodgeManagerDao;
+    public LodgeManagerInterface lodgeManagerDao;
     /**
      * demander la liste des chats présent et la restituer à celui qui la lui a demandé
      */
