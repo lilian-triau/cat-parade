@@ -1,14 +1,11 @@
 package jobsDescription.Service;
 
-import jobsDescription.Dao.LodgeManagerDao;
+import jobsDescription.Dao.LodgeManagerInterface;
 import jobsDescription.Entity.Cat;
-
-import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,18 +16,33 @@ import java.util.List;
  */
 public class StageManagerTest {
 
-    private StageManagerService stageManager = new StageManagerService();
+    private Chaussette chaussette = new Chaussette();
+    private Moutarde moutarde = new Moutarde();
 
     @Mock
-    LodgeManagerDao lodgeManagerDao;
+    LodgeManagerInterface lodgeManagerDao;
 
     @Test
-    public void getCatsListPresent(){
+    public void whenChaussette(){
         // Arrange
         List<Cat> catList = getDatas();
         when(this.lodgeManagerDao.getCatslistPresent()).thenReturn(catList);
         // Act
-        List<Cat> catListResult = this.stageManager.getCatsListPresent();
+        List<Cat> catListResult = this.chaussette.getCatsListPresent();
+        // Assert
+        assertNotNull(catListResult);
+        assertFalse(catListResult.isEmpty());
+        assertEquals(catList, catListResult);
+    }
+
+
+    @Test
+    public void whenMoutarde(){
+        // Arrange
+        List<Cat> catList = getDatas();
+        when(this.lodgeManagerDao.getCatslistPresent()).thenReturn(catList);
+        // Act
+        List<Cat> catListResult = this.moutarde.getCatsListPresent();
         // Assert
         assertNotNull(catListResult);
         assertFalse(catListResult.isEmpty());

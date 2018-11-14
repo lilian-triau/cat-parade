@@ -9,7 +9,7 @@ import java.util.List;
  * sa responsabilité est de gérer les loges des chats.
  * Quels chats y sont, en faire rentrer, en faire sortir.
  */
-interface LodgeManagerInterface {
+public interface LodgeManagerInterface {
 
     /**
      * ajouter un chat dans les loges
@@ -24,7 +24,7 @@ interface LodgeManagerInterface {
     /**
      * lister les chats présents
      */
-    public List<Cat> catslistPresent();
+    public List<Cat> getCatslistPresent();
 
 
 }
