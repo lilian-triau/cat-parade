@@ -1,11 +1,16 @@
 package jobsDescription.Service;
 
+import jobsDescription.Dao.LodgeManagerDao;
 import jobsDescription.Entity.Cat;
+
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * - le régisseur :
@@ -14,15 +19,35 @@ import static org.junit.Assert.assertEquals;
  */
 public class StageManagerTest {
 
-    StageManager stageManager = new StageManager();
+    private StageManagerService stageManager = new StageManagerService();
+
+    @Mock
+    LodgeManagerDao lodgeManagerDao;
 
     @Test
     public void getCatsListPresent(){
         // Arrange
-        //String expected = list de cat;
+        List<Cat> catList = getDatas();
+        when(this.lodgeManagerDao.getCatslistPresent()).thenReturn(catList);
         // Act
-        List<Cat> catList = this.stageManager.getCatsListPresent();
+        List<Cat> catListResult = this.stageManager.getCatsListPresent();
         // Assert
-        assertEquals(expected, catList);
+        assertNotNull(catListResult);
+        assertFalse(catListResult.isEmpty());
+        assertEquals(catList, catListResult);
+    }
+
+    private List<Cat> getDatas(){
+        List<Cat> catList = new ArrayList<Cat>();
+
+        Cat cat1 = new Cat();
+        cat1.setId(1);
+        catList.add(cat1);
+
+        Cat cat2 = new Cat();
+        cat2.setId(2);
+        catList.add(cat2);
+
+        return catList;
     }
 }
