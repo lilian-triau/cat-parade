@@ -1,7 +1,7 @@
-package jobsDescription.Service;
+package io.catparade.jobsDescription.Service;
 
-import jobsDescription.Dao.LodgeManagerInterface;
-import jobsDescription.Entity.Cat;
+import io.catparade.jobsDescription.Dao.LodgeManagerInterface;
+import io.catparade.jobsDescription.Entity.Cat;
 
 import java.util.List;
 
@@ -10,14 +10,12 @@ import java.util.List;
  * sa responsabilité est de connaitre le fonctionnement du défilé.
  * Il sait, pour l'instant, donner la liste intégrale des chats qui vont défiler.
  */
-public class Chaussette implements StageManagerInterface{
+public class Moutarde implements StageManagerInterface{
     public LodgeManagerInterface lodgeManagerDao;
     /**
      * demander la liste des chats présent et la restituer à celui qui la lui a demandé
      */
     public List<Cat> getCatsListPresent(){
-        List<Cat> catList = this.lodgeManagerDao.getCatslistPresent();
-        catList.remove(catList.size());
-        return catList;
+        return this.lodgeManagerDao.getCatslistPresent();
     }
 }

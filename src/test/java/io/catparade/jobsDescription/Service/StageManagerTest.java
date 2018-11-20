@@ -1,7 +1,7 @@
-package jobsDescription.Service;
+package io.catparade.jobsDescription.Service;
 
-import jobsDescription.Dao.LodgeManagerInterface;
-import jobsDescription.Entity.Cat;
+import io.catparade.jobsDescription.Dao.LodgeManagerInterface;
+import io.catparade.jobsDescription.Entity.Cat;
 import org.junit.Test;
 import org.mockito.Mock;
 import static org.junit.Assert.*;

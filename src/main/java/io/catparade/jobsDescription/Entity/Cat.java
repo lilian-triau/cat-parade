@@ -1,4 +1,4 @@
-package jobsDescription.Entity;
+package io.catparade.jobsDescription.Entity;
 
 public class Cat {
     private Integer id;

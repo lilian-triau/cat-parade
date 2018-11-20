@@ -1,6 +1,6 @@
-package jobsDescription.Controller;
+package io.catparade.jobsDescription.Controller;
 
-import jobsDescription.Entity.Cat;
+import io.catparade.jobsDescription.Entity.Cat;
 
 import java.util.List;
 
